@@ -48,7 +48,18 @@ public class Responder
         String response = null;
         String primera = "";
         Iterator<String> primeraPalabra = palabra.iterator();
-        primera = primeraPalabra.next();
+
+        boolean  busqueda = true;
+        while (primeraPalabra.hasNext() && busqueda){
+            response = respuestas.get(primeraPalabra.next());
+            if (response != null){
+                    busqueda =false;
+                }
+        }
+        for (String elemento : palabra){
+            
+            response = respuestas.get(elemento);
+        }
         response = respuestas.get(primera);
                 if (response != null){
                     return response;
