@@ -7,6 +7,6 @@ comment1.text=\r\n\ Construct\ a\ Responder\ -\ nothing\ to\ do\r\n
 comment2.params=
 comment2.target=void\ respuestasMap()
 comment3.params=palabra
-comment3.target=java.lang.String\ generateResponse(java.lang.String)
+comment3.target=java.lang.String\ generateResponse(java.util.HashSet)
 comment3.text=\r\n\ Generate\ a\ response.\r\n\ @return\ \ \ A\ string\ that\ should\ be\ displayed\ as\ the\ response\r\n
 numComments=4
