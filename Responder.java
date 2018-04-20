@@ -23,14 +23,10 @@ public class Responder
     public Responder()
     {
         aleatorio = new Random();
-        frases = new ArrayList<String>();
+        crearRespuestasporDefecto();
         respuestas = new HashMap<>();
 
-        frases.add("cuentenos su problema señor");
-        frases.add("Le pondremos en contacto con un especialista");
-        frases.add("tenga paciencia señor estamos saturados en este momento");
-        frases.add("Señor esta usted siendo borde conmigo, respeteme por favor");
-        frases.add("Le paso con mi superior que tenga un buen dia :) ");
+  
         
         
         HashSet<String> set01 = new HashSet<>();
@@ -71,11 +67,25 @@ public class Responder
         
         
                 if (response == null){
-                
-                response = frases.get(aleatorio.nextInt(frases.size()));
-                
+                    if (frases.size() >0 ){
+                    response = frases.remove(aleatorio.nextInt(frases.size()));
+                }
+                else{
+                    response = "lo siento, no entiendo tu respuesta";
                     
+                }
             }
         return response;
+    }
+    
+    
+    private void crearRespuestasporDefecto(){
+        frases = new ArrayList<String>();
+        frases.add("cuentenos su problema señor");
+        frases.add("Le pondremos en contacto con un especialista");
+        frases.add("tenga paciencia señor estamos saturados en este momento");
+        frases.add("Señor esta usted siendo borde conmigo, respeteme por favor");
+        frases.add("Le paso con mi superior que tenga un buen dia :) ");
+        
     }
 }
